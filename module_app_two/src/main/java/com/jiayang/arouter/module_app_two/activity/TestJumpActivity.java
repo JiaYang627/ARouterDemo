@@ -5,7 +5,7 @@ import android.support.annotation.Nullable;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.jiayang.arouter.lib_common.Constant;
-import com.jiayang.arouter.lib_common.common.BaseActivity;
+import com.jiayang.arouter.lib_common.base.BaseActivity;
 import com.jiayang.arouter.module_app_two.R;
 import com.jiayang.arouter.module_app_two.presenter.TestJumpActivityPresenter;
 import com.jiayang.arouter.module_app_two.viewipm.TestJumpActivityIpm;

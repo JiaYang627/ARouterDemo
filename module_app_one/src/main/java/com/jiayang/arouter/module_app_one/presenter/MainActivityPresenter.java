@@ -4,7 +4,7 @@ import android.content.Intent;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.jiayang.arouter.lib_common.Constant;
-import com.jiayang.arouter.lib_common.common.BasePresenter;
+import com.jiayang.arouter.lib_common.base.BasePresenter;
 import com.jiayang.arouter.lib_common.net.ServerUtils;
 import com.jiayang.arouter.lib_common.net.api.LocationApi;
 import com.jiayang.arouter.lib_common.net.bean.LocationBean;

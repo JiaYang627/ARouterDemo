@@ -5,7 +5,7 @@ import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.Button;
 
-import com.jiayang.arouter.lib_common.common.BaseActivity;
+import com.jiayang.arouter.lib_common.base.BaseActivity;
 import com.jiayang.arouter.module_app_one.R;
 import com.jiayang.arouter.module_app_one.presenter.MainActivityPresenter;
 import com.jiayang.arouter.module_app_one.viewipm.MainActivityIpm;

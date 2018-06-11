@@ -3,7 +3,7 @@ package com.jiayang.arouter.module_app_two.presenter;
 import android.content.Intent;
 import android.text.TextUtils;
 
-import com.jiayang.arouter.lib_common.common.BasePresenter;
+import com.jiayang.arouter.lib_common.base.BasePresenter;
 import com.jiayang.arouter.lib_common.utils.ToastUtils;
 import com.jiayang.arouter.module_app_two.viewipm.TestJumpActivityIpm;
 
