@@ -27,7 +27,7 @@ public class RxErrorHandler implements ErrorListener{
     @Override
     public void handleError(Throwable throwable) {
         String errorString = throwable.toString();
-        LogUtils.e("aaaa==============" + throwable.toString());
+        LogUtils.e("网络错误信息为 ========>>>" + throwable.toString());
         //返回的错误为空
         if (errorString == null) {
             ToastUtils.initToast(ConstantUtils.getAPPContext().getString(R.string.generic_server_down));

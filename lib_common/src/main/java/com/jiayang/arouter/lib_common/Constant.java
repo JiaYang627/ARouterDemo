@@ -13,5 +13,5 @@ public class Constant {
     /**
      * 路由跳转
      */
-    public static final String PATH_TWO_TEST = "/two/testActivity";//登录(多个app公用此标签)
+    public static final String PATH_TWO_TEST = "/two/testActivity";
 }
