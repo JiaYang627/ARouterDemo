@@ -1,0 +1,59 @@
+if (isModule.toBoolean()) {
+    apply plugin: 'com.android.application'
+} else {
+    apply plugin: 'com.android.library'
+}
+def globalConfiguration = rootProject.extensions.getByName("ext")
+android {
+    compileSdkVersion globalConfiguration.getAt("ANDROID_COMPILE_SDK_VERSION") as int
+    buildToolsVersion globalConfiguration.getAt("ANDROID_BUILD_TOOLS_VERSION")
+
+    defaultConfig {
+        minSdkVersion globalConfiguration.getAt("ANDROID_BUILD_MIN_SDK_VERSION") as int
+        targetSdkVersion globalConfiguration.getAt("ANDROID_TARGET_SDK_VERSION") as int
+        versionCode globalConfiguration.getAt("VERSION_CODE") as int
+        versionName globalConfiguration.getAt("VERSION_NAME")
+        if (isModule.toBoolean()) {
+            multiDexEnabled true
+        }
+
+        //ARouter
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
+    }
+    buildTypes {
+        release {
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+            if (isModule.toBoolean()) {
+                manifest.srcFile 'src/main/module/AndroidManifest.xml'
+            } else {
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+                //集成开发模式下排除debug文件夹中的所有Java文件
+                java {
+                    exclude 'debug/**'
+                }
+            }
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    //    releaseImplementation project(path: ':lib_common', configuration: 'release')
+    //    debugImplementation project(path: ':lib_common', configuration: 'debug')
+    api project(':lib_common')
+    //aRouter
+    implementation 'com.alibaba:arouter-api:1.2.1'
+    annotationProcessor 'com.alibaba:arouter-compiler:1.0.3'
+    if (isModule.toBoolean()) {
+        implementation 'com.android.support:multidex:1.0.1'
+    }
+}

@@ -1,0 +1,33 @@
+apply plugin: 'com.android.application'
+def globalConfiguration = rootProject.extensions.getByName("ext")
+android {
+    compileSdkVersion globalConfiguration.getAt("ANDROID_COMPILE_SDK_VERSION") as int
+    buildToolsVersion globalConfiguration.getAt("ANDROID_BUILD_TOOLS_VERSION")
+
+    defaultConfig {
+        applicationId "com.jiayang.arouter"
+        minSdkVersion globalConfiguration.getAt("ANDROID_BUILD_MIN_SDK_VERSION") as int
+        targetSdkVersion globalConfiguration.getAt("ANDROID_TARGET_SDK_VERSION") as int
+        versionCode globalConfiguration.getAt("VERSION_CODE") as int
+        versionName globalConfiguration.getAt("VERSION_NAME")
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+
+    if (isModule.toBoolean()) {
+        implementation project(':lib_common')
+    } else {
+        implementation project(':module_app_one')
+        implementation project(':module_app_two')
+    }
+}
