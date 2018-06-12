@@ -27,13 +27,6 @@ public class BasePresenter<View extends BaseViewIpm> {
     protected void attachView(BaseViewIpm view){
 
     }
-    /**
-     * 页面跳转 携带数据过来 Pst写此方法拿数据
-     * @param intent
-     */
-    public void getData(Intent intent) {
-
-    }
 
     /**
      * 页面跳转 数据回传 Pst写此方法拿回传数据
