@@ -1,5 +1,8 @@
 package debug;
 
+import android.content.Context;
+import android.support.multidex.MultiDex;
+
 import com.jiayang.arouter.lib_common.base.BaseApplication;
 
 /**
@@ -8,6 +11,12 @@ import com.jiayang.arouter.lib_common.base.BaseApplication;
  * 邮箱   ：JiaYang627@163.com
  */
 public class AppOneApplication extends BaseApplication {
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(this);
+    }
     @Override
     public void onCreate() {
         super.onCreate();
