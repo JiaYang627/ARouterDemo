@@ -5,7 +5,7 @@ package com.jiayang.arouter.lib_common;
  * @date ：2018-06-11 13：27
  * 邮箱   ：JiaYang627@163.com
  * 常量类
- * 其中: 路由跳转命名统一用path+模块名+Activity名
+ * 其中: 路由跳转命名统一用：path+模块名+Activity名
  */
 public class Constant {
 
