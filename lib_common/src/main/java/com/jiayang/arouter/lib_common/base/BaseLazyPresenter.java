@@ -12,7 +12,7 @@ public abstract class BaseLazyPresenter<View extends BaseViewIpm> extends BasePr
 
     private boolean mIsPrepared;
     private boolean mBoolean;
-    private boolean allowLoad = true; // 如果需要（重新）加载，这个变量设置为false
+    private boolean allowLoad = true; // 如果需要（重新）加载，这个变量在preLazyLoad中设置为true
     public BaseLazyPresenter(View view, Intent intent) {
         super(view, intent);
     }

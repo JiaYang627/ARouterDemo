@@ -16,6 +16,7 @@ public class BaseFragment<Presenter extends BasePresenter> extends RxFragment {
         super.onResume();
 
         if (mPresenter != null) {
+            mPresenter.getArguments(getArguments());
             mPresenter.onTakeView();
         }
     }
