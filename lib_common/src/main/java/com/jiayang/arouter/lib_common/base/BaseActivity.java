@@ -14,7 +14,7 @@ import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
  * @date ：2018-06-11 14：43
  * 邮箱   ：JiaYang627@163.com
  */
-public abstract class BaseActivity  <Presenter extends BasePresenter> extends RxAppCompatActivity {
+public abstract class BaseActivity  <Presenter extends BasePresenter> extends RxAppCompatActivity implements BaseViewIpm{
     public Presenter mPresenter;
 
     @Override
