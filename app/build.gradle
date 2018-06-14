@@ -44,12 +44,13 @@ android {
                 variant.outputs.all { output ->
                     if (!variant.buildType.isDebuggable()) {
                         //获取签名的名字
-                        variant.signingConfig.name
+//                        variant.signingConfig.name
                         //要被替换的源字符串
-                        def sourceFile = "-${variant.flavorName}-${variant.buildType.name}"
+//                        def sourceFile = "-${variant.flavorName}-${variant.buildType.name}"
                         //替换的字符串
-                        def replaceFile = "_V${variant.versionName}_${variant.flavorName}_${variant.buildType.name}_${buildTime()}"
-                        outputFileName = output.outputFile.name.replace("app-release.apk", "arouter_${variant.versionName}_${buildTime()}_r.apk");
+//                        def replaceFile = "_V${variant.versionName}_${variant.flavorName}_${variant.buildType.name}_${buildTime()}"
+                        // ↓ 生成的apk 格式为：arouter_release_1.0.0_201806140905_r.apk
+                        outputFileName = output.outputFile.name.replace("app-release.apk", "arouter_${variant.buildType.name}_${variant.versionName}_${buildTime()}_r.apk");
                         //遗留问题：如何获取当前module的name，如CodeBooke这个名字怎么获取到
                     }
                 }
