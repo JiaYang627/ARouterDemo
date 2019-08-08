@@ -62,5 +62,7 @@ dependencies {
     api 'com.squareup.okhttp3:logging-interceptor:3.6.0'
     // fastjson
     api 'com.alibaba:fastjson:1.2.33'
+    // eventbus
+    api 'org.greenrobot:eventbus:3.1.1'
 
 }

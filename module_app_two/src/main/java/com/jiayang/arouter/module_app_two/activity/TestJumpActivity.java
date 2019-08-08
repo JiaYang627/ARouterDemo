@@ -6,9 +6,13 @@ import android.support.annotation.Nullable;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.jiayang.arouter.lib_common.Constant;
 import com.jiayang.arouter.lib_common.base.BaseActivity;
+import com.jiayang.arouter.lib_common.utils.eventbus.EventMessage;
+import com.jiayang.arouter.lib_common.utils.eventbus.EventMessageType;
 import com.jiayang.arouter.module_app_two.R;
 import com.jiayang.arouter.module_app_two.presenter.TestJumpActivityPresenter;
 import com.jiayang.arouter.module_app_two.viewipm.TestJumpActivityIpm;
+
+import org.greenrobot.eventbus.EventBus;
 
 /**
  * @author ：张 奎
@@ -28,5 +32,6 @@ public class TestJumpActivity extends BaseActivity<TestJumpActivityPresenter> im
         super.onCreate(savedInstanceState);
 
         mPresenter = new TestJumpActivityPresenter(this, getIntent());
+        EventBus.getDefault().post(new EventMessage(EventMessageType.TEST_EVENTBUS));
     }
 }

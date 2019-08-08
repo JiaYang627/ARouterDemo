@@ -9,6 +9,7 @@
     * OkHttp
     * RxLifecycle
     * FastJson
+    * EventBus
 * 其他：
     * 项目未使用Dagger2注入 。(后期会打算开一分支使用 Dagger2 注解)
     * Butter Knife注解在module间使用会报“Attribute value must be constant”错误，在今天(18-6-11)搭建的时候没有用R2的方法去解决。近期没有考虑去解决(不想用)。
